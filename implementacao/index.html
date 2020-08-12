@@ -10,9 +10,10 @@
         let altura = document.getElementById("campoAltura").value;
         let peso = document.getElementById("campoPeso").value;
         let menssagem = ""
+        let pessoa = { altura:altura, peso:peso }
 
         //2 calcular
-        let imc = peso / (altura * altura);
+        let imc = pessoa.peso / (pessoa.altura * pessoa.altura);
         
         //3 classificar
         if(imc <= 18.5){
@@ -34,6 +35,7 @@
     </script>
 </head>
 <body>
+    <center>
     <div>Calculadorade IMC</div>
 
     <div>Altura</div>
@@ -45,5 +47,6 @@
     <div><button onclick="calcular()">Calcular</button></div>
     
     <div id="resultado"></div>
+    </center>
 </body>
 </html>

@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
-    <script>
-        pessoa = {
-            altura:0,
-            peso:0,
-            calcularImc: function (){
-                return this.peso / (this.altura * this.altura)
-            },
-            classificar: function(){
-                let menssagem = "";
-                let imc = this.calcularImc();
-                if(imc <= 18.5){
-                 menssagem = "Abaixo do peso";
-                }else if(imc >= 18.5 && imc <= 24.9){
-                 menssagem = "Peso normal";
-                }else if(imc >= 25 && imc <= 29.9){
-                 menssagem = "Sobrepeso";
-                }else if(imc >= 30 && imc <= 34.9){
-                 menssagem = "Obesidade Grau 1";
-                }else if(imc >= 35 && imc <= 39.9){
-                 menssagem = "Obesidade Grau 2";
-                }else{
-                 menssagem = "Obesidade Grau 3";
-                return menssagem;
-        }
-        comtrole = {
-            lerDados: function(){
-            let altura = document.getElementById("campoAltura").value;
-            let peso = document.getElementById("campoPeso").value;
-            },
-            exibirDados: function(msg){
-                document.getElementById("resultado").innerText = msg;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora IMC</title>
+        <script>
+            pessoa = {
+                altura:0,
+                peso:0,
+                calcularImc: function (){
+                    return this.peso / (this.altura * this.altura);
+                },
+                classificar: function(){
+                    let menssagem = "";
+                    let imc = this.calcularImc();
+                    if(imc <= 18.5){
+                    menssagem = "Abaixo do peso";
+                    }else if(imc >= 18.5 && imc <= 24.9){
+                    menssagem = "Peso normal";
+                    }else if(imc >= 25 && imc <= 29.9){
+                    menssagem = "Sobrepeso";
+                    }else if(imc >= 30 && imc <= 34.9){
+                    menssagem = "Obesidade Grau 1";
+                    }else if(imc >= 35 && imc <= 39.9){
+                    menssagem = "Obesidade Grau 2";
+                    }else{
+                    menssagem = "Obesidade Grau 3";
+                    return menssagem;
             }
-        }
+            comtrole = {
+                lerDados: function(){
+                let altura = document.getElementById("campoAltura").value;
+                let peso = document.getElementById("campoPeso").value;
+                },
+                exibirDados: function(msg){
+                    document.getElementById("resultado").innerText = msg;
+                }
+            }
 
-            
-        function calcular(){
-            //ler dados da tela
-            let dados = contole.lerDados()
+                
+            function calcular(){
+                //ler dados da tela
+                let dados = contole.lerDados();
 
-            //atribuiu os dados da pessoa
-            pessoa.peso = dados.peso
-            pessoa.altura = dados.altura
+                //atribuiu os dados da pessoa
+                pessoa.peso = dados.peso;
+                pessoa.altura = dados.altura;
 
-            //classificar
-            let classificar = pessoa.classificar()
+                //classificar
+                let classificar = pessoa.classificar();
 
-            //exibir na tela
-            controle.exibirDados(classificar)
-        }
+                //exibir na tela
+                controle.exibirDados(classificar);
+            }
 
-    </script>
-</head>
-<body>
-    <center>
-    <div>Calculadorade IMC</div>
+        </script>
+    </head>
+    <body>
+        <center>
+        <div>Calculadorade IMC</div>
 
-    <div>Altura</div>
-    <div><input id="campoAltura"/></div>
+        <div>Altura</div>
+        <div><input id="campoAltura"/></div>
 
-    <div>Peso</div>
-    <div><input id="campoPeso"/></div>
+        <div>Peso</div>
+        <div><input id="campoPeso"/></div>
 
-    <div><button onclick="calcular()">Calcular</button></div>
-    
-    <div id="resultado"></div>
-    </center>
-</body>
+        <div><button onclick="calcular()">Calcular</button></div>
+        
+        <div id="resultado"></div>
+        </center>
+    </body>
 </html>
